@@ -1,4 +1,4 @@
 module.exports = {
-  watchDir: '/Users/Nemo/Downloads/test',
-  outputDir: '/Users/Nemo/Downloads/md5'
+  watchDir: '/somewhere',
+  outputDir: '/elsewhere'
 }
