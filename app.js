@@ -27,7 +27,6 @@ function readFileMd5 (path) {
 function generateHash (inputDir, outputDir) {
   console.log('generateHash')
   return del([outputDir], { force: true }).then(function () {
-    console.log('del done')
     return new Promise(function (resolve, reject) {
       var walker = walk.walk(inputDir)
       walker.on('file', function (root, fileStats, next) {
