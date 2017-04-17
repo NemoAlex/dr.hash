@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "del": "^2.2.2",
+    "mkdirp": "^0.5.1",
+    "node-watch": "^0.5.2",
+    "queue": "^4.2.1",
+    "walk": "^2.3.9"
+  },
+  "name": "dr.hash",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NemoAlex/dr.hash.git"
+  },
+  "author": "Nemo Alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NemoAlex/dr.hash/issues"
+  },
+  "homepage": "https://github.com/NemoAlex/dr.hash#readme",
+  "description": ""
+}
