@@ -25,7 +25,7 @@ function readFileMd5 (path) {
 }
 
 function generateHash (inputDir, outputDir) {
-  console.log('generateHash')
+  console.log('Starting generate hash')
   return del([outputDir], { force: true }).then(function () {
     return new Promise(function (resolve, reject) {
       var walker = walk.walk(inputDir, {
@@ -47,6 +47,7 @@ function generateHash (inputDir, outputDir) {
         })
       })
       walker.on('end', function () {
+        console.log('Jobs done')
         resolve()
       })
     })
@@ -65,10 +66,7 @@ watch(config.watchDir, watchOptions, function(evt, path) {
   console.log(path, ' changed.');
   queue.push(function (cb) {
     console.log('Dealing with', path);
-    generateHash(config.watchDir, config.outputDir).then(function () {
-      console.log('done')
-      cb()
-    })
+    generateHash(config.watchDir, config.outputDir).then(cb)
   })
   queue.start()
 })
