@@ -28,7 +28,9 @@ function generateHash (inputDir, outputDir) {
   console.log('generateHash')
   return del([outputDir], { force: true }).then(function () {
     return new Promise(function (resolve, reject) {
-      var walker = walk.walk(inputDir)
+      var walker = walk.walk(inputDir, {
+        filters: ['.git']
+      })
       walker.on('file', function (root, fileStats, next) {
         if (/^\./.test(fileStats.name)) return next()
         var relative = Path.relative(inputDir, root)
